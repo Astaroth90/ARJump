@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ARJump", "ARJump.csproj", "{60F33E4C-016A-A0D9-5DB3-656FB816C2F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ARJump.Editor", "ARJump.Editor.csproj", "{DABF8ABE-AD90-896E-0025-88687A1460A4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{60F33E4C-016A-A0D9-5DB3-656FB816C2F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60F33E4C-016A-A0D9-5DB3-656FB816C2F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60F33E4C-016A-A0D9-5DB3-656FB816C2F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60F33E4C-016A-A0D9-5DB3-656FB816C2F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DABF8ABE-AD90-896E-0025-88687A1460A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DABF8ABE-AD90-896E-0025-88687A1460A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DABF8ABE-AD90-896E-0025-88687A1460A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DABF8ABE-AD90-896E-0025-88687A1460A4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

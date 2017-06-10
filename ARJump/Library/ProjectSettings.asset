@@ -133,7 +133,7 @@ PlayerSettings:
       depthFormat: 0
       useSustainedPerformanceMode: 0
     hololens:
-      depthFormat: 1
+      depthFormat: 0
   protectGraphicsMemory: 0
   useHDRDisplay: 0
   applicationIdentifier: {}
@@ -511,16 +511,17 @@ PlayerSettings:
   scriptingBackend: {}
   incrementalIl2cppBuild: {}
   additionalIl2CppArgs: 
-  apiCompatibilityLevelPerPlatform: {}
+  apiCompatibilityLevelPerPlatform:
+    Metro: 3
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
   metroPackageName: ARJump
   metroPackageVersion: 
-  metroCertificatePath: 
+  metroCertificatePath: C:\Users\Psoss\Documents\Computergrafik\AbschlussProjekt\ARJump\Assets\WSATestCertificate.pfx
   metroCertificatePassword: 
-  metroCertificateSubject: 
-  metroCertificateIssuer: 
-  metroCertificateNotAfter: 0000000000000000
+  metroCertificateSubject: DefaultCompany
+  metroCertificateIssuer: DefaultCompany
+  metroCertificateNotAfter: 807e8091cd00d401
   metroApplicationDescription: ARJump
   wsaImages: {}
   metroTileShortName: 

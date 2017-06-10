@@ -331,6 +331,7 @@
     <Compile Include="Assets\HoloToolkit\Utilities\Shaders\FastConfigurable\Scripts\CalibrationSpace.cs" />
     <Compile Include="Assets\MrRabZ\RabbitActionController.cs" />
     <Compile Include="Assets\MrRabZ\Standard Assets\Character Controllers\Sources\Scripts\MouseLook.cs" />
+    <Compile Include="Assets\OrchestrateGame.cs" />
     <Compile Include="Assets\ThirdPersonHoloLensControl.cs" />
   </ItemGroup>
   <ItemGroup>

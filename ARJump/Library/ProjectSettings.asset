@@ -517,7 +517,7 @@ PlayerSettings:
   m_MobileRenderingPath: 1
   metroPackageName: ARJump
   metroPackageVersion: 
-  metroCertificatePath: C:\Users\Psoss\Documents\Computergrafik\AbschlussProjekt\ARJump\Assets\WSATestCertificate.pfx
+  metroCertificatePath: Assets\WSATestCertificate.pfx
   metroCertificatePassword: 
   metroCertificateSubject: DefaultCompany
   metroCertificateIssuer: DefaultCompany

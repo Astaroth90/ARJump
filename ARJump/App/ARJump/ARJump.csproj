@@ -226,12 +226,12 @@
 
   <ItemGroup>
     <ProjectReference Include="C:\Users\Psoss\Documents\Computergrafik\AbschlussProjekt\ARJump\App\GeneratedProjects\UWP\Assembly-CSharp\Assembly-CSharp.csproj">
-      <Project>{9b20793b-0103-4b98-98b6-56f2ac6410a4}</Project>
+      <Project>{67fc931c-b069-4658-98b3-fdd9401c1472}</Project>
       <Name>Assembly-CSharp</Name>
       <Private>False</Private>
     </ProjectReference>
     <ProjectReference Include="C:\Users\Psoss\Documents\Computergrafik\AbschlussProjekt\ARJump\App\GeneratedProjects\UWP\Assembly-CSharp-firstpass\Assembly-CSharp-firstpass.csproj">
-      <Project>{12dd57dc-1360-4b21-958f-95474a46aca3}</Project>
+      <Project>{e471ac9b-2dd1-4eaa-b3b0-e602618e5ecd}</Project>
       <Name>Assembly-CSharp-firstpass</Name>
       <Private>False</Private>
     </ProjectReference>

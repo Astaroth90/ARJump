@@ -5,8 +5,9 @@ using UnityStandardAssets.Characters.ThirdPerson;
 using HoloToolkit.Unity;
 using System;
 
-public class OrchestrateGame : MonoBehaviour {
-    
+public class OrchestrateGame : MonoBehaviour
+{
+
     private ThirdPersonCharacter m_Character;
     private bool m_isInitialized;
     public float kMinAreaForComplete = 50.0f;
@@ -16,24 +17,32 @@ public class OrchestrateGame : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
+        Debug.Log("StartOrchestrate");
         m_Character = GetComponent<ThirdPersonCharacter>();
         SpatialUnderstanding.Instance.ScanStateChanged += Instance_ScanStateChanged;
         HideCharacter();
     }
     private void Instance_ScanStateChanged()
     {
-        if ((SpatialUnderstanding.Instance.ScanState == SpatialUnderstanding.ScanStates.Done) &&
-    SpatialUnderstanding.Instance.AllowSpatialUnderstanding)
+        Debug.Log("Instance_ScanStateChanged");
+        Debug.Log((SpatialUnderstanding.Instance.ScanState == SpatialUnderstanding.ScanStates.Done).ToString());
+        Debug.Log(SpatialUnderstanding.Instance.AllowSpatialUnderstanding.ToString());
+        //if ((SpatialUnderstanding.Instance.ScanState == SpatialUnderstanding.ScanStates.Done) &&
+        //SpatialUnderstanding.Instance.AllowSpatialUnderstanding)
+        if ((true) &&
+        SpatialUnderstanding.Instance.AllowSpatialUnderstanding)
         {
             PlaceCharacterInGame();
         }
     }
 
     // Update is called once per frame
-    void Update () {
+    void Update()
+    {
         // check if enough of the room is scanned
         if (!m_isInitialized && DoesScanMeetMinBarForCompletion)
         {
+            Debug.Log("updateInside");
             // let service know we're done scanning
             SpatialUnderstanding.Instance.RequestFinishScan();
             m_isInitialized = true;
@@ -42,8 +51,10 @@ public class OrchestrateGame : MonoBehaviour {
 
     public bool DoesScanMeetMinBarForCompletion
     {
+
         get
         {
+            Debug.Log("DoesScanMeetMinBarForCompletion");
             // Only allow this when we are actually scanning
             if ((SpatialUnderstanding.Instance.ScanState != SpatialUnderstanding.ScanStates.Scanning) ||
                 (!SpatialUnderstanding.Instance.AllowSpatialUnderstanding))
@@ -73,6 +84,7 @@ public class OrchestrateGame : MonoBehaviour {
     private void ShowCharacter(Vector3 placement)
     {
         var ethanBody = GameObject.Find("EthanBody");
+        Debug.Log("showCharacter");
         ethanBody.GetComponent<SkinnedMeshRenderer>().enabled = true;
         m_Character.transform.position = placement;
         var rigidBody = GetComponent<Rigidbody>();
@@ -82,12 +94,14 @@ public class OrchestrateGame : MonoBehaviour {
 
     private void HideCharacter()
     {
+        Debug.Log("HideCharacter");
         var ethanBody = GameObject.Find("EthanBody");
         ethanBody.GetComponent<SkinnedMeshRenderer>().enabled = false;
     }
 
     private void PlaceCharacterInGame()
     {
+        Debug.Log("PlaceCharacter");
         // use spatial understanding to find floor
         SpatialUnderstandingDll.Imports.QueryPlayspaceAlignment(SpatialUnderstanding.Instance.UnderstandingDLL.GetStaticPlayspaceAlignmentPtr());
         SpatialUnderstandingDll.Imports.PlayspaceAlignment alignment = SpatialUnderstanding.Instance.UnderstandingDLL.GetStaticPlayspaceAlignment();
@@ -100,7 +114,7 @@ public class OrchestrateGame : MonoBehaviour {
 
         // hide mesh
         var customMesh = SpatialUnderstanding.Instance.GetComponent<SpatialUnderstandingCustomMesh>();
-        
-        customMesh.DrawProcessedMesh = true;
+
+        customMesh.DrawProcessedMesh = false;
     }
 }

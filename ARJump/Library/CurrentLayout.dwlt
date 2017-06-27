@@ -42,8 +42,8 @@ MonoBehaviour:
     y: 30
     width: 1536
     height: 731
-  m_MinSize: {x: 683, y: 342}
-  m_MaxSize: {x: 12008, y: 8042}
+  m_MinSize: {x: 683, y: 492}
+  m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
   controlID: 10
 --- !u!114 &3
@@ -115,14 +115,14 @@ MonoBehaviour:
     y: 442
     width: 1225
     height: 289
-  m_MinSize: {x: 102, y: 121}
-  m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 20}
+  m_MinSize: {x: 232, y: 271}
+  m_MaxSize: {x: 10002, y: 10021}
+  m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
   - {fileID: 20}
-  m_Selected: 1
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 1
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -207,8 +207,8 @@ MonoBehaviour:
     y: 0
     width: 1225
     height: 731
-  m_MinSize: {x: 406, y: 342}
-  m_MaxSize: {x: 8006, y: 8042}
+  m_MinSize: {x: 406, y: 492}
+  m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
   controlID: 11
 --- !u!114 &10
@@ -332,10 +332,10 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 1222
-    y: 100
-    width: 306
-    height: 694
+    x: 1227
+    y: 92
+    width: 309
+    height: 710
   m_InitialOpenURL: https://public-cdn.cloud.unity3d.com/editor/production/cloud/hub
   m_GlobalObjectTypeName: 
   m_RegisteredViewURLs:
@@ -407,19 +407,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Standard Assets/Characters/ThirdPersonCharacter/Scripts
+    - Assets/HoloLensXboxControllerInput
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Standard Assets/Characters/ThirdPersonCharacter/Scripts
+  - Assets/HoloLensXboxControllerInput
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\Psoss\Documents\Computergrafik\AbschlussProjekt\ARJump
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 133}
-    m_SelectedIDs: a02d0000
-    m_LastClickedID: 11680
-    m_ExpandedIDs: 00000000a62700000e280000a8290000522a0000b82a00004a2d0000e62d0000
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 282b0000
+    m_LastClickedID: 11048
+    m_ExpandedIDs: 00000000a62700000e280000a8290000522a0000282b00004a2d0000e62d000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -472,10 +472,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: f42e0000
-    m_LastClickedInstanceID: 12020
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: 3e24000062240000bc240000ba240000842700002828000000000000a0270000222c0000
+    m_ExpandedInstanceIDs: 3e24000062240000bc240000ba240000842700002828000000000000a0270000222c000084280000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -528,7 +528,7 @@ MonoBehaviour:
     y: 92
     width: 309
     height: 710
-  m_ScrollPosition: {x: 0, y: 426.95508}
+  m_ScrollPosition: {x: 0, y: 0}
   m_InspectorMode: 0
   m_PreviewResizer:
     m_CachedPref: 160
@@ -563,9 +563,9 @@ MonoBehaviour:
     height: 421
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: f42e0000
-    m_LastClickedID: 12020
-    m_ExpandedIDs: defbffff00000000f42e0000
+    m_SelectedIDs: 
+    m_LastClickedID: 0
+    m_ExpandedIDs: ccb2feff94b3feff46b5feffacbbfeff62bdfeff2abefefff6bffeffc0c1feff88c2feff40c4feff16c5feff18ccfeffd0d3feff5cd4feff207cffff267effffde7effffb680ffffbe81ffff7482ffff2684ffffdefbffff00000000dc45000080560000aa5f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -615,14 +615,14 @@ MonoBehaviour:
     width: 918
     height: 421
   m_SceneLighting: 1
-  lastFramingTime: 6955.926577662678
+  lastFramingTime: 1162.2019606933493
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.22596827, y: -0.8402449, z: 2.3359687}
+    m_Target: {x: 1.4380484, y: -1.0160148, z: 1.7340025}
     speed: 2
-    m_Value: {x: -0.22596827, y: -0.8402449, z: 2.3359687}
+    m_Value: {x: 1.4380484, y: -1.0160148, z: 1.7340025}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -645,13 +645,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.35923573, y: 0.015397806, z: -0.005927654, w: -0.9331011}
+    m_Target: {x: -0.087416485, y: -0.48831674, z: 0.049242478, w: -0.86687964}
     speed: 2
-    m_Value: {x: -0.35923573, y: 0.015397806, z: -0.005927654, w: -0.9331011}
+    m_Value: {x: -0.087416485, y: -0.48831674, z: 0.049242478, w: -0.86687964}
   m_Size:
-    m_Target: 1.607347
+    m_Target: 3.5547652
     speed: 2
-    m_Value: 1.607347
+    m_Value: 3.5547652
   m_Ortho:
     m_Target: 0
     speed: 2

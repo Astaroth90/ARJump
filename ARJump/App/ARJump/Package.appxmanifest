@@ -28,6 +28,15 @@
     </Application>
   </Applications>
   <Capabilities>
+    <Capability Name="internetClient" />
     <uap2:Capability Name="spatialPerception" />
+    <DeviceCapability Name="humaninterfacedevice">
+      <Device Id="any">
+        <Function Type="usage:0001 0004" />
+      </Device>
+      <Device Id="any">
+        <Function Type="usage:0001 0005" />
+      </Device>
+    </DeviceCapability>
   </Capabilities>
 </Package>

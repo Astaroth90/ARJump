@@ -27,6 +27,8 @@ public class ThirdPersonHoloLensControl : MonoBehaviour
     void Start()
     {
         controllerInput = new ControllerInput(0, 0.19f);
+        Debug.Log(controllerInput.GetType());
+        Debug.Log("Controller_Start");
         // get the transform of the main camera
         if (Camera.main != null)
         {
@@ -34,28 +36,31 @@ public class ThirdPersonHoloLensControl : MonoBehaviour
         }
 
         m_Character = GetComponent<ThirdPersonCharacter>();
+        Debug.Log(m_Character.gameObject.name);
     }
 
     // Update is called once per frame
     void Update()
     {
         
-        if (Input.GetButton("Fire1"))
-        {
-            m_Jump = controllerInput.GetButton(ControllerButton.A);
-        }
-
-
-        //controllerInput.Update();
-        //if (!m_Jump)
+        //if (Input.GetButton("Fire1"))
         //{
         //    m_Jump = controllerInput.GetButton(ControllerButton.A);
         //}
+
+
+        controllerInput.Update();
+        if (!m_Jump)
+        {
+            m_Jump = controllerInput.GetButton(ControllerButton.A);
+        }
     }
 
 
     private void FixedUpdate()
     {
+        controllerInput.Update();
+
         // read inputs
         float h = MoveHorizontalSpeed * controllerInput.GetAxisLeftThumbstickX();
         float v = MoveVerticalSpeed * controllerInput.GetAxisLeftThumbstickY();

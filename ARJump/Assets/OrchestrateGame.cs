@@ -117,7 +117,9 @@ public class OrchestrateGame : MonoBehaviour
 
         // hide mesh
         var customMesh = SpatialUnderstanding.Instance.GetComponent<SpatialUnderstandingCustomMesh>();
-        customMesh.DrawProcessedMesh = false;
+        customMesh.DrawProcessedMesh = true;
+        customMesh.MeshMaterial.color = new Color(25.0f, 200.0f, 25.0f, 150.0f);
+        
 
     }
 }

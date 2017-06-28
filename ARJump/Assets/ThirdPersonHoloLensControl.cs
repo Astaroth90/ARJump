@@ -42,14 +42,6 @@ public class ThirdPersonHoloLensControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        //if (Input.GetButton("Fire1"))
-        //{
-        //    m_Jump = controllerInput.GetButton(ControllerButton.A);
-        //}
-
-
-        controllerInput.Update();
         if (!m_Jump)
         {
             m_Jump = controllerInput.GetButton(ControllerButton.A);

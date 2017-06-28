@@ -131,17 +131,9 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="C:\Users\Psoss\Documents\Computergrafik\AbschlussProjekt\ARJump\App\GeneratedProjects\UWP\Assembly-CSharp-firstpass\Assembly-CSharp-firstpass.csproj">
-      <Project>{02d6eeab-9e03-4f1e-b0ed-9c978c3e5da2}</Project>
+      <Project>{e41ccfc0-2313-420b-affa-8bb669ff30ad}</Project>
       <Name>Assembly-CSharp-firstpass</Name>
     </ProjectReference>
-    <Reference Include="Assembly-UnityScript">
-      <HintPath>$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed\Assembly-UnityScript.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Boo.Lang">
-      <HintPath>$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed\Boo.Lang.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="UnityEngine">
       <HintPath>$(UnityWSASolutionDir)$(UnityWSASolutionName)\Unprocessed\UnityEngine.dll</HintPath>
       <Private>False</Private>

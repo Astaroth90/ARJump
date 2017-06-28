@@ -7,7 +7,7 @@ using UnityStandardAssets.Characters.ThirdPerson;
 public class ThirdPersonHoloLensControl : MonoBehaviour
 {
 
-    private ControllerInput controllerInput;
+    public ControllerInput controllerInput;
     private ThirdPersonCharacter m_Character;
     private Transform m_Cam;
     private Vector3 m_CamForward;
@@ -65,6 +65,7 @@ public class ThirdPersonHoloLensControl : MonoBehaviour
         float h = MoveHorizontalSpeed * controllerInput.GetAxisLeftThumbstickX();
         float v = MoveVerticalSpeed * controllerInput.GetAxisLeftThumbstickY();
         bool crouch = controllerInput.GetButton(ControllerButton.B);
+        bool set = controllerInput.GetButton(ControllerButton.X);
 
         // calculate move direction to pass to character
         if (m_Cam != null)
@@ -73,7 +74,17 @@ public class ThirdPersonHoloLensControl : MonoBehaviour
             m_CamForward = Vector3.Scale(m_Cam.forward, new Vector3(1, 0, 1)).normalized;
             m_Move = v * m_CamForward + h * m_Cam.right;
         }
-
+        if (set == true)
+        {
+            Debug.Log("set");
+            var curser = GameObject.FindGameObjectWithTag("Cursor");
+            Debug.Log(curser.transform.position.ToString());
+            Vector3 newposition = curser.transform.position;
+            newposition.y += 0.5f;
+            m_Character.transform.position = newposition;
+            m_Character.transform.rotation = new Quaternion(0.0f, 0.0f, 0.0f,0.0f);
+            
+        }
 
         // pass all parameters to the character control script
         m_Character.Move(m_Move, crouch, m_Jump);

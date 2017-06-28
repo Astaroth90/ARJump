@@ -151,6 +151,7 @@ namespace HoloToolkit.Unity.InputModule
 
         protected void OnTappedEvent(InteractionSourceKind source, int tapCount, Ray headRay)
         {
+            Debug.Log("OnTappedEvent");
             inputManager.RaiseInputClicked(this, 0, tapCount);
         }
 
@@ -171,6 +172,7 @@ namespace HoloToolkit.Unity.InputModule
 
         protected void OnManipulationStartedEvent(InteractionSourceKind source, Vector3 cumulativeDelta, Ray headray)
         {
+            Debug.Log("OnManipulationStartedEvent");
             inputManager.RaiseManipulationStarted(this, 0, cumulativeDelta);
         }
 

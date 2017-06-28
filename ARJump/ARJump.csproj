@@ -88,6 +88,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\ControlManager.cs" />
     <Compile Include="Assets\FGC\Animation\Mecanim\ControlScript.cs" />
     <Compile Include="Assets\FGC\Scripts\FGC_addItem.cs" />
     <Compile Include="Assets\FGC\Volund-Morph3D\UniqueShadow\UniqueShadow.cs" />
@@ -327,8 +328,6 @@
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\VectorRollingStatistics.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\WorldAnchorManager.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Shaders\FastConfigurable\Scripts\CalibrationSpace.cs" />
-    <Compile Include="Assets\MrRabZ\RabbitActionController.cs" />
-    <Compile Include="Assets\MrRabZ\Standard Assets\Character Controllers\Sources\Scripts\MouseLook.cs" />
     <Compile Include="Assets\OrchestrateGame.cs" />
     <Compile Include="Assets\ThirdPersonHoloLensControl.cs" />
   </ItemGroup>
@@ -374,7 +373,6 @@
     <None Include="Assets\HoloToolkit\Utilities\Shaders\VertexLitConfigurableTransparent.shader" />
     <None Include="Assets\HoloToolkit\Utilities\Shaders\WindowOcclusion.shader" />
     <None Include="Assets\HoloToolkit\Utilities\Shaders\macro.cginc" />
-    <None Include="Assets\MrRabZ\Standard Assets\Skyboxes\_skybox info.txt" />
     <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
     <None Include="Assets\Standard Assets\Characters\RollerBall\RollerBallGuidelines.txt" />
     <None Include="Assets\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />

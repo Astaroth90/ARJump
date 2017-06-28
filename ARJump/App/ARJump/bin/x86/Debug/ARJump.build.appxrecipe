@@ -436,6 +436,9 @@
     <AppxPackagedFile Include="C:\Users\Psoss\Documents\Computergrafik\AbschlussProjekt\ARJump\App\ARJump\Data\level0.resS">
       <PackagePath>Data\level0.resS</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Psoss\Documents\Computergrafik\AbschlussProjekt\ARJump\App\ARJump\Data\sharedassets0.assets.resS">
+      <PackagePath>Data\sharedassets0.assets.resS</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Psoss\Documents\Computergrafik\AbschlussProjekt\ARJump\App\ARJump\Data\managedAssemblies.txt">
       <PackagePath>Data\managedAssemblies.txt</PackagePath>
     </AppxPackagedFile>

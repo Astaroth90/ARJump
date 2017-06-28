@@ -20,17 +20,20 @@ public class OrchestrateGame : MonoBehaviour
         Debug.Log("StartOrchestrate");
         m_Character = GetComponent<ThirdPersonCharacter>();
         SpatialUnderstanding.Instance.ScanStateChanged += Instance_ScanStateChanged;
-        HideCharacter();
+        //HideCharacter();
     }
     private void Instance_ScanStateChanged()
     {
         Debug.Log("Instance_ScanStateChanged");
         Debug.Log((SpatialUnderstanding.Instance.ScanState == SpatialUnderstanding.ScanStates.Done).ToString());
         Debug.Log(SpatialUnderstanding.Instance.AllowSpatialUnderstanding.ToString());
-        //if ((SpatialUnderstanding.Instance.ScanState == SpatialUnderstanding.ScanStates.Done) &&
-        //SpatialUnderstanding.Instance.AllowSpatialUnderstanding)
+#if NETFX_CORE
+        if ((SpatialUnderstanding.Instance.ScanState == SpatialUnderstanding.ScanStates.Done) &&
+        SpatialUnderstanding.Instance.AllowSpatialUnderstanding)
+#else
         if ((true) &&
         SpatialUnderstanding.Instance.AllowSpatialUnderstanding)
+#endif
         {
             PlaceCharacterInGame();
         }
@@ -114,7 +117,7 @@ public class OrchestrateGame : MonoBehaviour
 
         // hide mesh
         var customMesh = SpatialUnderstanding.Instance.GetComponent<SpatialUnderstandingCustomMesh>();
-
         customMesh.DrawProcessedMesh = false;
+
     }
 }

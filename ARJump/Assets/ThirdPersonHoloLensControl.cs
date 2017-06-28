@@ -66,6 +66,11 @@ public class ThirdPersonHoloLensControl : MonoBehaviour
         float v = MoveVerticalSpeed * controllerInput.GetAxisLeftThumbstickY();
         bool crouch = controllerInput.GetButton(ControllerButton.B);
         bool set = controllerInput.GetButton(ControllerButton.X);
+        bool box = controllerInput.GetButton(ControllerButton.RightShoulder);
+
+        var curser = GameObject.FindGameObjectWithTag("Cursor");
+        Vector3 newposition = curser.transform.position;
+        newposition.y += 0.5f;
 
         // calculate move direction to pass to character
         if (m_Cam != null)
@@ -77,15 +82,20 @@ public class ThirdPersonHoloLensControl : MonoBehaviour
         if (set == true)
         {
             Debug.Log("set");
-            var curser = GameObject.FindGameObjectWithTag("Cursor");
             Debug.Log(curser.transform.position.ToString());
-            Vector3 newposition = curser.transform.position;
-            newposition.y += 0.5f;
-            m_Character.transform.position = newposition;
-            m_Character.transform.rotation = new Quaternion(0.0f, 0.0f, 0.0f,0.0f);
-            
-        }
 
+            m_Character.transform.position = newposition;
+            m_Character.transform.rotation = new Quaternion(0.0f, 0.0f, 0.0f, 0.0f);
+        }
+        else
+        {
+            if (box)
+            {
+                var cube = GameObject.FindGameObjectWithTag("Cube");
+                cube.GetComponent<MeshRenderer>().enabled = true;
+                cube.transform.position = newposition;
+            }
+        }
         // pass all parameters to the character control script
         m_Character.Move(m_Move, crouch, m_Jump);
         m_Jump = false;

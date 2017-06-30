@@ -41,4 +41,10 @@ public class Bridge : MonoBehaviour {
 
         m_GroundCheckDistance = m_Rigidbody.velocity.y < 0 ? m_OrigGroundCheckDistance : 0.01f;
     }
+
+    public void restart()
+    {
+        this.transform.position = new Vector3(0.0f, 0.0f, 0.0f);
+        GetComponent<MeshRenderer>().enabled = false;
+    }
 }

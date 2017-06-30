@@ -88,6 +88,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Bridge.cs" />
     <Compile Include="Assets\ControlManager.cs" />
     <Compile Include="Assets\Cube.cs" />
     <Compile Include="Assets\FGC\Animation\Mecanim\ControlScript.cs" />

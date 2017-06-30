@@ -59,6 +59,7 @@ public class ThirdPersonHoloLensControl : MonoBehaviour
         bool crouch = controllerInput.GetButton(ControllerButton.B);
         bool set = controllerInput.GetButton(ControllerButton.X);
         bool box = controllerInput.GetButton(ControllerButton.RightShoulder);
+        bool bridge = controllerInput.GetButton(ControllerButton.LeftShoulder);
 
         var curser = GameObject.FindGameObjectWithTag("Cursor");
         Vector3 newposition = curser.transform.position;
@@ -87,6 +88,14 @@ public class ThirdPersonHoloLensControl : MonoBehaviour
                 cube.GetComponent<MeshRenderer>().enabled = true;
                 cube.transform.position = newposition;
             }
+
+            if (bridge)
+            {
+                var bridgeO = GameObject.FindGameObjectWithTag("Bridge");
+                bridgeO.GetComponent<MeshRenderer>().enabled = true;
+                bridgeO.transform.position = newposition;
+            }
+
         }
         // pass all parameters to the character control script
         m_Character.Move(m_Move, crouch, m_Jump);

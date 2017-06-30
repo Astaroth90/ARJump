@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Cursor
   - Cube
+  - Bridge
   layers:
   - Default
   - TransparentFX

@@ -95,6 +95,7 @@
     <Compile Include="Assets\FGC\Scripts\FGC_addItem.cs" />
     <Compile Include="Assets\FGC\Volund-Morph3D\UniqueShadow\UniqueShadow.cs" />
     <Compile Include="Assets\FGC\Volund-Morph3D\UniqueShadow\UniqueShadowSun.cs" />
+    <Compile Include="Assets\Goal.cs" />
     <Compile Include="Assets\HoloLensXboxControllerInput\ControllerInputExample.cs" />
     <Compile Include="Assets\HoloToolkit\CrossPlatform\Scripts\MetroHandleRef.cs" />
     <Compile Include="Assets\HoloToolkit\CrossPlatform\Scripts\Reflection\ReflectionExtensions.cs" />

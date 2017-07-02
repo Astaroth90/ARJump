@@ -42,15 +42,23 @@ public class ThirdPersonHoloLensControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+#if NETFX_CORE
         if (!m_Jump)
         {
             m_Jump = controllerInput.GetButton(ControllerButton.A);
         }
+#else
+        if (!m_Jump)
+        {
+            m_Jump = Input.GetButton("XboxA");
+        }
+#endif
     }
 
 
     private void FixedUpdate()
     {
+#if NETFX_CORE
         controllerInput.Update();
 
         // read inputs
@@ -65,11 +73,31 @@ public class ThirdPersonHoloLensControl : MonoBehaviour
         Vector3 newposition = curser.transform.position;
         newposition.y += 0.5f;
 
+#else
+        float h = MoveHorizontalSpeed * Input.GetAxis("Horizontal");
+        float v = MoveVerticalSpeed * Input.GetAxis("Vertical");
+        float ch = MoveHorizontalSpeed / 10 * Input.GetAxis("RHorizontal");
+        float cv = MoveVerticalSpeed / 10 * Input.GetAxis("RVertical");
+        bool crouch = false;
+        bool set = Input.GetButton("XboxX");
+        bool box = Input.GetButton("RightBumper");
+        bool bridge = Input.GetButton("LeftBumper");
+
+        var curser = GameObject.FindGameObjectWithTag("Cursor");
+        Vector3 newposition = curser.transform.position;
+        newposition.y += 0.5f;
+#endif
+
         // calculate move direction to pass to character
         if (m_Cam != null)
         {
             // calculate camera relative direction to move:
             m_CamForward = Vector3.Scale(m_Cam.forward, new Vector3(1, 0, 1)).normalized;
+#if NETFX_CORE
+            
+#else
+            m_Cam.transform.rotation = new Quaternion(m_Cam.transform.rotation.x + cv, m_Cam.transform.rotation.y + ch, 0.0f, 1.0f);
+#endif
             m_Move = v * m_CamForward + h * m_Cam.right;
         }
         if (set == true)

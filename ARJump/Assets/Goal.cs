@@ -9,8 +9,8 @@ public class Goal : MonoBehaviour {
     [Range(1f, 4f)][SerializeField] float m_GravityMultiplier = 2f;
     [SerializeField] float m_GroundCheckDistance = 0.1f;
 
-    bool m_IsGrounded;
-    float m_OrigGroundCheckDistance;
+    bool m_IsGrounded = false;
+    float m_OrigGroundCheckDistance = 0.0f;
     Vector3 m_GroundNormal;
     Rigidbody m_Rigidbody;
 

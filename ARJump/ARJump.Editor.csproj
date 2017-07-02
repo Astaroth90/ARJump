@@ -171,6 +171,7 @@
     <Compile Include="Assets\HoloToolkit\Utilities\Shaders\FastConfigurable\Editor\ShaderGUIUtils.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Boom Boom\Tag.txt" />
     <None Include="Assets\FGC\Readme.txt" />
     <None Include="Assets\FGC\Volund-Morph3D\Shared\UnityPBSLighting.cginc" />
     <None Include="Assets\FGC\Volund-Morph3D\Shared\UnityStandardSurface.cginc" />
@@ -216,6 +217,7 @@
     <None Include="Assets\Standard Assets\Characters\RollerBall\RollerBallGuidelines.txt" />
     <None Include="Assets\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
+    <None Include="Assets\Wii U - Super Mario 3D World - Mario\READ ME.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

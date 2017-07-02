@@ -1,0 +1,7 @@
+Game: Super Mario 3D World
+Subject: Boom Boom
+Copyright: Nintendo
+Model Ripper: Random Talking Bush
+Hosting Permissions: The Models Resource
+Notes: Special thanks to ItsEasyActually for the model importing script.
+       Also, the UV mapping for the bump and specular maps is on UV layer 2 (FBX/DAE only!).

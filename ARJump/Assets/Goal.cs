@@ -14,14 +14,14 @@ public class Goal : MonoBehaviour {
     Vector3 m_GroundNormal;
     Rigidbody m_Rigidbody;
 
-    private bool isPlaced = true;
+    private bool isPlaced = false;
     private GameObject mario;
     private float distance;
 	// Use this for initialization
 	void Start () {
-        //GetComponent<MeshRenderer>().enabled = false;
+        GetComponent<MeshRenderer>().enabled = false;
         mario = GameObject.FindGameObjectWithTag("Mario");
-        m_Rigidbody = GetComponent<Rigidbody>();
+        //m_Rigidbody = GetComponent<Rigidbody>();
     }
 	
 	// Update is called once per frame
@@ -34,20 +34,24 @@ public class Goal : MonoBehaviour {
                 Debug.Log("Finish");
             }
         }
-        if (GetComponent<MeshRenderer>().enabled == true)
-        {
-            if (!m_IsGrounded)
-            {
-                HandleAirborneMovement();
-                transform.rotation = new Quaternion(0.0f, transform.rotation.y, 0.0f, 1.0f);
+        //if (GetComponent<MeshRenderer>().enabled == true)
+        //{
+        //    if (!m_IsGrounded)
+        //    {
+        //        HandleAirborneMovement();
+        //        transform.rotation = new Quaternion(0.0f, transform.rotation.y, 0.0f, 1.0f);
 
-            }
-        }
+        //    }
+        //}
     }
 
-    public void placeGoal()
+    public void placeGoal(Vector3 position)
     {
-
+        if(!isPlaced)
+        {
+            transform.position = position;
+            isPlaced = true;
+        }
     }
 
     void HandleAirborneMovement()
@@ -57,5 +61,13 @@ public class Goal : MonoBehaviour {
         m_Rigidbody.AddForce(extraGravityForce);
 
         m_GroundCheckDistance = m_Rigidbody.velocity.y < 0 ? m_OrigGroundCheckDistance : 0.01f;
+    }
+
+    public void restart()
+    {
+        this.transform.position = new Vector3(0.0f, 0.0f, 0.0f);
+        this.transform.rotation = new Quaternion(0.0f, 0.0f, 0.0f, 0.0f);
+        GetComponent<MeshRenderer>().enabled = false;
+        this.isPlaced = false;
     }
 }

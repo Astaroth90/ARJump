@@ -54,10 +54,8 @@ public class OrchestrateGame : MonoBehaviour
 
     public bool DoesScanMeetMinBarForCompletion
     {
-
         get
-        {
-            
+        {            
             // Only allow this when we are actually scanning
             if ((SpatialUnderstanding.Instance.ScanState != SpatialUnderstanding.ScanStates.Scanning) ||
                 (!SpatialUnderstanding.Instance.AllowSpatialUnderstanding))

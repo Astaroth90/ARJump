@@ -23,6 +23,8 @@ public class ThirdPersonHoloLensControl : MonoBehaviour
 
     public float ScaleSpeed = 1f;
 
+    private bool bridgepick = false;
+
 
     void Start()
     {
@@ -64,10 +66,14 @@ public class ThirdPersonHoloLensControl : MonoBehaviour
         // read inputs
         float h = MoveHorizontalSpeed * controllerInput.GetAxisLeftThumbstickX();
         float v = MoveVerticalSpeed * controllerInput.GetAxisLeftThumbstickY();
+        float rotateH = MoveHorizontalSpeed / 10 * controllerInput.GetAxisRightThumbstickY();
         bool crouch = controllerInput.GetButton(ControllerButton.B);
         bool set = controllerInput.GetButton(ControllerButton.X);
         bool box = controllerInput.GetButton(ControllerButton.RightShoulder);
         bool bridge = controllerInput.GetButton(ControllerButton.LeftShoulder);
+
+        bool bridgeDown = controllerInput.GetButtonDown(ControllerButton.LeftShoulder);
+        bool bridgeUp = controllerInput.GetButtonUp(ControllerButton.LeftShoulder);
 
         var curser = GameObject.FindGameObjectWithTag("Cursor");
         Vector3 newposition = curser.transform.position;
@@ -76,12 +82,16 @@ public class ThirdPersonHoloLensControl : MonoBehaviour
 #else
         float h = MoveHorizontalSpeed * Input.GetAxis("Horizontal");
         float v = MoveVerticalSpeed * Input.GetAxis("Vertical");
-        float ch = MoveHorizontalSpeed / 10 * Input.GetAxis("RHorizontal");
+        float rotateH = MoveHorizontalSpeed / 10 * Input.GetAxis("RHorizontal");
         float cv = MoveVerticalSpeed / 10 * Input.GetAxis("RVertical");
+        
         bool crouch = false;
         bool set = Input.GetButton("XboxX");
         bool box = Input.GetButton("RightBumper");
         bool bridge = Input.GetButton("LeftBumper");
+
+        bool bridgeDown = Input.GetButtonDown("LeftBumper");
+        bool bridgeUp = Input.GetButtonUp("LeftBumper");
 
         var curser = GameObject.FindGameObjectWithTag("Cursor");
         Vector3 newposition = curser.transform.position;
@@ -96,7 +106,7 @@ public class ThirdPersonHoloLensControl : MonoBehaviour
 #if NETFX_CORE
             
 #else
-            m_Cam.transform.rotation = new Quaternion(m_Cam.transform.rotation.x + cv, m_Cam.transform.rotation.y + ch, 0.0f, 1.0f);
+            m_Cam.transform.rotation = new Quaternion(m_Cam.transform.rotation.x + cv, m_Cam.transform.rotation.y + rotateH, 0.0f, 1.0f);
 #endif
             m_Move = v * m_CamForward + h * m_Cam.right;
         }
@@ -116,15 +126,32 @@ public class ThirdPersonHoloLensControl : MonoBehaviour
                 cube.GetComponent<MeshRenderer>().enabled = true;
                 cube.transform.position = newposition;
             }
-
-            if (bridge)
+            var bridgeO = GameObject.FindGameObjectWithTag("Bridge");
+            if (bridgeDown)
             {
-                var bridgeO = GameObject.FindGameObjectWithTag("Bridge");
+                
                 bridgeO.GetComponent<MeshRenderer>().enabled = true;
-                bridgeO.transform.position = newposition;
+                    
+                    if (!bridgepick)
+                    {
+                        bridgeO.GetComponent<Rigidbody>().useGravity = false;
+                        bridgeO.transform.position = newposition;
+                        bridgepick = true;
+                    }
+                    else
+                    {
+                        bridgeO.transform.rotation = new Quaternion(0.0f, (bridgeO.transform.rotation.y + rotateH), 0.0f, 1.0f);
+                    }
+                }
+                else
+                {
+                    bridgeO.GetComponent<Rigidbody>().useGravity = true;
+                    bridgepick = false;
+                }
+                
             }
 
-        }
+        
         // pass all parameters to the character control script
         m_Character.Move(m_Move, crouch, m_Jump);
         m_Jump = false;

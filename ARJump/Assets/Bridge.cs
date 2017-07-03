@@ -45,6 +45,7 @@ public class Bridge : MonoBehaviour {
     public void restart()
     {
         this.transform.position = new Vector3(0.0f, 0.0f, 0.0f);
+        this.transform.rotation = new Quaternion(0.0f, 0.0f, 0.0f, 0.0f);
         GetComponent<MeshRenderer>().enabled = false;
     }
 }

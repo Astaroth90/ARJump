@@ -133,7 +133,7 @@ namespace HoloToolkit.Unity
             {
                 if (GazeManager.Instance != null)
                 {
-                    return GazeManager.Instance.GazeOrigin;
+                    return GazeManager.Instance.gazeOrigin;
                 }
                 return Camera.main.transform.position;
             }
@@ -148,7 +148,7 @@ namespace HoloToolkit.Unity
             {
                 if (GazeManager.Instance != null)
                 {
-                    return GazeManager.Instance.GazeNormal;
+                    return GazeManager.Instance.Normal;
                 }
                 return Camera.main.transform.forward;
             }
@@ -163,7 +163,7 @@ namespace HoloToolkit.Unity
         {
             if (GazeManager.Instance != null)
             {
-                hitPosition = GazeManager.Instance.HitPosition;
+                hitPosition = GazeManager.Instance.Position;
                 return true;
             }
             hitPosition = Vector3.zero;

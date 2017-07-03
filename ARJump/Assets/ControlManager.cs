@@ -57,7 +57,7 @@ public class ControlManager : MonoBehaviour {
         var bridge = GameObject.FindGameObjectWithTag("Bridge");
         var mario = GameObject.FindGameObjectWithTag("Mario");
         cube.GetComponent<Cube>().restart();
-        bridge.GetComponent<Cube>().restart();
+        bridge.GetComponent<Bridge>().restart();
     }
 
     // Update is called once per frame

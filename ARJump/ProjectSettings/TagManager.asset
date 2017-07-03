@@ -9,6 +9,7 @@ TagManager:
   - Bridge
   - Mario
   - Goal
+  - Manager
   layers:
   - Default
   - TransparentFX

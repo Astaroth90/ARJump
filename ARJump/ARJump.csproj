@@ -95,7 +95,13 @@
     <Compile Include="Assets\FGC\Scripts\FGC_addItem.cs" />
     <Compile Include="Assets\FGC\Volund-Morph3D\UniqueShadow\UniqueShadow.cs" />
     <Compile Include="Assets\FGC\Volund-Morph3D\UniqueShadow\UniqueShadowSun.cs" />
+    <Compile Include="Assets\GazeManager.cs" />
+    <Compile Include="Assets\GazeStabilizer.cs" />
+    <Compile Include="Assets\GestureAction.cs" />
+    <Compile Include="Assets\GestureManager.cs" />
     <Compile Include="Assets\Goal.cs" />
+    <Compile Include="Assets\HandGuidance.cs" />
+    <Compile Include="Assets\HandsManager.cs" />
     <Compile Include="Assets\HoloLensXboxControllerInput\ControllerInputExample.cs" />
     <Compile Include="Assets\HoloToolkit\CrossPlatform\Scripts\MetroHandleRef.cs" />
     <Compile Include="Assets\HoloToolkit\CrossPlatform\Scripts\Reflection\ReflectionExtensions.cs" />
@@ -331,6 +337,8 @@
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\VectorRollingStatistics.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\WorldAnchorManager.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Shaders\FastConfigurable\Scripts\CalibrationSpace.cs" />
+    <Compile Include="Assets\Interactible.cs" />
+    <Compile Include="Assets\InteractibleManager.cs" />
     <Compile Include="Assets\OrchestrateGame.cs" />
     <Compile Include="Assets\ThirdPersonHoloLensControl.cs" />
   </ItemGroup>

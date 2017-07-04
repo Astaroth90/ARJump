@@ -91,10 +91,6 @@
     <Compile Include="Assets\Bridge.cs" />
     <Compile Include="Assets\ControlManager.cs" />
     <Compile Include="Assets\Cube.cs" />
-    <Compile Include="Assets\FGC\Animation\Mecanim\ControlScript.cs" />
-    <Compile Include="Assets\FGC\Scripts\FGC_addItem.cs" />
-    <Compile Include="Assets\FGC\Volund-Morph3D\UniqueShadow\UniqueShadow.cs" />
-    <Compile Include="Assets\FGC\Volund-Morph3D\UniqueShadow\UniqueShadowSun.cs" />
     <Compile Include="Assets\Goal.cs" />
     <Compile Include="Assets\HoloLensXboxControllerInput\ControllerInputExample.cs" />
     <Compile Include="Assets\HoloToolkit\CrossPlatform\Scripts\MetroHandleRef.cs" />
@@ -335,13 +331,6 @@
     <Compile Include="Assets\ThirdPersonHoloLensControl.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Boom Boom\Tag.txt" />
-    <None Include="Assets\FGC\Readme.txt" />
-    <None Include="Assets\FGC\Volund-Morph3D\Shared\UnityPBSLighting.cginc" />
-    <None Include="Assets\FGC\Volund-Morph3D\Shared\UnityStandardSurface.cginc" />
-    <None Include="Assets\FGC\Volund-Morph3D\Shared\Volund_StandardCharacterSpecularSurface.shader" />
-    <None Include="Assets\FGC\Volund-Morph3D\UniqueShadow\UniqueShadow_DepthOnly.shader" />
-    <None Include="Assets\FGC\Volund-Morph3D\UniqueShadow\UniqueShadow_ShadowSample.cginc" />
     <None Include="Assets\HoloLensXboxControllerInput\README.txt" />
     <None Include="Assets\HoloToolkit\Input\Shaders\Cursor.shader" />
     <None Include="Assets\HoloToolkit\Input\Shaders\CursorShader.shader" />
@@ -381,6 +370,10 @@
     <None Include="Assets\Standard Assets\Characters\RollerBall\RollerBallGuidelines.txt" />
     <None Include="Assets\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
+    <None Include="Assets\Standard Assets\ParticleSystems\ParticleSystemsGuidelines.txt" />
+    <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAdd.shader" />
+    <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAddSoft.shader" />
+    <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAlpha.shader" />
     <None Include="Assets\Wii U - Super Mario 3D World - Mario\READ ME.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

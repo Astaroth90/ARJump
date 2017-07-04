@@ -19,6 +19,7 @@ public class Goal : MonoBehaviour {
     private float distance;
 	// Use this for initialization
 	void Start () {
+        GetComponent<ParticleSystem>().Pause();
         GetComponent<MeshRenderer>().enabled = false;
         mario = GameObject.FindGameObjectWithTag("Mario");
         //m_Rigidbody = GetComponent<Rigidbody>();
@@ -31,7 +32,12 @@ public class Goal : MonoBehaviour {
             distance = Vector3.Distance(this.transform.position, mario.transform.position);
             if(distance <= GoalDistance)
             {
-                Debug.Log("Finish");
+                GetComponent<ParticleSystem>().Play();
+                var cube = GameObject.FindGameObjectWithTag("Cube");
+                var bridge = GameObject.FindGameObjectWithTag("Bridge");
+                cube.GetComponent<Cube>().restart();
+                bridge.GetComponent<Bridge>().restart();
+                
             }
         }
         //if (GetComponent<MeshRenderer>().enabled == true)

@@ -13,13 +13,15 @@ public class Goal : MonoBehaviour {
     float m_OrigGroundCheckDistance = 0.0f;
     Vector3 m_GroundNormal;
     Rigidbody m_Rigidbody;
+    private GameObject firework;
 
     private bool isPlaced = false;
     private GameObject mario;
     private float distance;
 	// Use this for initialization
 	void Start () {
-        GetComponent<ParticleSystem>().Pause();
+        firework = GameObject.FindGameObjectWithTag("Fire");
+        firework.GetComponent<ParticleSystem>().Pause();
         GetComponent<MeshRenderer>().enabled = false;
         mario = GameObject.FindGameObjectWithTag("Mario");
         //m_Rigidbody = GetComponent<Rigidbody>();
@@ -32,7 +34,7 @@ public class Goal : MonoBehaviour {
             distance = Vector3.Distance(this.transform.position, mario.transform.position);
             if(distance <= GoalDistance)
             {
-                GetComponent<ParticleSystem>().Play();
+                firework.GetComponent<ParticleSystem>().Play();
                 var cube = GameObject.FindGameObjectWithTag("Cube");
                 var bridge = GameObject.FindGameObjectWithTag("Bridge");
                 cube.GetComponent<Cube>().restart();
@@ -75,5 +77,7 @@ public class Goal : MonoBehaviour {
         this.transform.rotation = new Quaternion(0.0f, 0.0f, 0.0f, 0.0f);
         GetComponent<MeshRenderer>().enabled = false;
         this.isPlaced = false;
+        firework = GameObject.FindGameObjectWithTag("Fire");
+        firework.GetComponent<ParticleSystem>().Pause();
     }
 }

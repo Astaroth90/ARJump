@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using HoloLensXboxController;
+using HoloToolkit.Unity;
 using UnityStandardAssets.Characters.ThirdPerson;
+using HoloToolkit.Unity.SpatialMapping;
 
 public class ThirdPersonHoloLensControl : MonoBehaviour
 {
@@ -24,6 +26,8 @@ public class ThirdPersonHoloLensControl : MonoBehaviour
     public float ScaleSpeed = 1f;
 
     private bool bridgepick = false;
+    private bool cubepick = false;
+    private bool playerpick = false;
 
 
     void Start()
@@ -71,6 +75,8 @@ public class ThirdPersonHoloLensControl : MonoBehaviour
         bool set = controllerInput.GetButton(ControllerButton.X);
         bool box = controllerInput.GetButton(ControllerButton.RightShoulder);
         bool bridge = controllerInput.GetButton(ControllerButton.LeftShoulder);
+        bool mesh = controllerInput.GetButton(ControllerButton.DPadUp);
+        bool mapping = controllerInput.GetButton(ControllerButton.DPadDown);
 
         var curser = GameObject.FindGameObjectWithTag("Cursor");
         Vector3 newposition = curser.transform.position;
@@ -86,6 +92,8 @@ public class ThirdPersonHoloLensControl : MonoBehaviour
         bool set = Input.GetButton("XboxX");
         bool box = Input.GetButton("RightBumper");
         bool bridge = Input.GetButton("LeftBumper");
+        bool mesh = false;
+        bool mapping = false;
 
 
 
@@ -100,53 +108,84 @@ public class ThirdPersonHoloLensControl : MonoBehaviour
             // calculate camera relative direction to move:
             m_CamForward = Vector3.Scale(m_Cam.forward, new Vector3(1, 0, 1)).normalized;
 #if NETFX_CORE
-            
+
 #else
             m_Cam.transform.rotation = new Quaternion(m_Cam.transform.rotation.x + cv, m_Cam.transform.rotation.y + ch, 0.0f, 1.0f);
 #endif
             m_Move = v * m_CamForward + h * m_Cam.right;
         }
-        if (set == true)
+        if (set)
         {
-            Debug.Log("set");
-            Debug.Log(curser.transform.position.ToString());
-
             m_Character.transform.position = newposition;
-            m_Character.transform.rotation = new Quaternion(0.0f, 0.0f, 0.0f, 0.0f);
+            m_Character.transform.rotation = new Quaternion(0.0f, 0.0f, 0.0f, 1.0f);
         }
         else
         {
             if (box)
             {
                 var cube = GameObject.FindGameObjectWithTag("Cube");
-                cube.GetComponent<MeshRenderer>().enabled = true;
-                cube.transform.position = newposition;
+                if (!cubepick)
+                {
+                    cube.GetComponent<MeshRenderer>().enabled = true;
+                    cube.transform.position = newposition;
+                    cubepick = true;
+                }
             }
+            else
+            {
+                cubepick = false;
+            }
+
             var bridgeO = GameObject.FindGameObjectWithTag("Bridge");
             if (bridge)
             {
-                
-                bridgeO.GetComponent<MeshRenderer>().enabled = true;
-                    
-                    if (!bridgepick)
-                    {
-                        bridgeO.GetComponent<Rigidbody>().useGravity = false;
-                        bridgeO.transform.position = newposition;
 
-                        bridgepick = true;
-                  
-                        bridgeO.transform.rotation = new Quaternion(0.0f, (m_Cam.transform.rotation.y), 0.0f, 1.0f);
-                    }
+                bridgeO.GetComponent<MeshRenderer>().enabled = true;
+
+                if (!bridgepick)
+                {
+                    bridgeO.GetComponent<Rigidbody>().useGravity = false;
+                    bridgeO.transform.position = newposition;
+
+                    bridgepick = true;
+
+                    bridgeO.transform.rotation = new Quaternion(0.0f, (m_Cam.transform.rotation.y), 0.0f, 1.0f);
+                }
+            }
+            else
+            {
+                bridgeO.GetComponent<Rigidbody>().useGravity = true;
+                bridgepick = false;
+            }
+            if (mesh)
+            {
+                
+                if (SpatialUnderstanding.Instance.UnderstandingCustomMesh.DrawProcessedMesh == true)
+                {
+                    SpatialUnderstanding.Instance.UnderstandingCustomMesh.DrawProcessedMesh = false;
                 }
                 else
                 {
-                    bridgeO.GetComponent<Rigidbody>().useGravity = true;
-                    bridgepick = false;
+                    SpatialUnderstanding.Instance.UnderstandingCustomMesh.DrawProcessedMesh = true;
+                }
+            }
+            if(mapping)
+            {
+                var map = GameObject.FindGameObjectWithTag("Mesh");
+                if (map.GetComponent<SpatialMappingManager>().drawVisualMeshes == true)
+                {
+                    map.GetComponent<SpatialMappingManager>().drawVisualMeshes = false;
+                }
+                else
+                {
+                    map.GetComponent<SpatialMappingManager>().drawVisualMeshes = true;
                 }
                 
             }
 
-        
+        }
+
+
         // pass all parameters to the character control script
         m_Character.Move(m_Move, crouch, m_Jump);
         m_Jump = false;

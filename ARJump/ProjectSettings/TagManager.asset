@@ -9,6 +9,8 @@ TagManager:
   - Bridge
   - Mario
   - Goal
+  - Fire
+  - Mesh
   layers:
   - Default
   - TransparentFX
